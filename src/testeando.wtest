@@ -1,0 +1,29 @@
+import parcelas.*
+import semillas.*
+
+describe "menta" {
+	
+	var nuevaMenta = new Menta()
+	var nuevaMenta2 = new Menta(altura= 0.3, anioDeObtencion = null)
+	
+	fixture { 
+		nuevaMenta.altura(1)
+	}
+	
+	test "menta" {
+
+		assert.that(nuevaMenta.daSemillas())
+		assert.equals(3, nuevaMenta.espacio())
+
+	}
+	
+	test "menta2" {
+		
+		assert.notThat(nuevaMenta2.daSemillas())
+		assert.equals(0.9, nuevaMenta2.espacio())
+	}
+}
+
+//Ejemplos:
+//* una menta de 1 metro, debería dar semillas y ocupar un espacio de 3 metros cuadrados.
+//* una menta de solo 0.3 metros, no debería dar semillas y ocuparía 0.9 metros cuadrados de espacio.
