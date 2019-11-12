@@ -24,6 +24,8 @@ describe "menta" {
 	}
 }
 
+
+
 //Ejemplos:
 //* una menta de 1 metro, debería dar semillas y ocupar un espacio de 3 metros cuadrados.
 //* una menta de solo 0.3 metros, no debería dar semillas y ocuparía 0.9 metros cuadrados de espacio.

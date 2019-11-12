@@ -1,0 +1,53 @@
+import parcelas.*
+import semillas.*
+
+test "soja" {
+	
+	var sojita = new Soja(altura=0.6, anioDeObtencion=2009)
+	
+	assert.equals(7, sojita.horasDeSolTolera())
+	assert.notThat(sojita.daSemillas())
+	assert.equals(0.3, sojita.espacio())
+	
+}
+
+test "menta" {
+	
+	var mentita = new Menta(altura=1, anioDeObtencion=null)
+	
+	assert.equals(3, mentita.espacio())
+	assert.that(mentita.daSemillas())	
+	
+	var mentita2 = new Menta(altura=0.3, anioDeObtencion= null)
+	
+	assert.notThat(mentita2.daSemillas())
+	assert.equals(0.9, mentita2.espacio())
+}
+
+test "quinoa" {
+	
+	var quinoita = new Quinoa(altura=null, anioDeObtencion= 2010, horasDeSolTolera= 12)
+	
+	assert.that(quinoita.daSemillas())
+	
+	var quinoita2 = new Quinoa(altura=null, anioDeObtencion= 2001, horasDeSolTolera= 9)
+	
+	assert.that(quinoita2.daSemillas())
+	
+}
+
+test "parcela" {
+	
+	var parcelita= new Parcelas(largo=1, ancho=20, horasDeSol=20)
+	
+	assert.equals(20, parcelita.superficie())
+}
+//Ejemplos:
+
+//si tenemos una quinoa que tolera 12 horas de sol y su semilla de origen es de 2010, se trata de una planta que da semillas.
+//si tenemos una planta que tolere 9 horas de sol pero cuya semilla de origen es de 2001, también da semillas.
+//
+//una menta de 1 metro, debería dar semillas y ocupar un espacio de 3 metros cuadrados.
+//una menta de solo 0.3 metros, no debería dar semillas y ocuparía 0.9 metros cuadrados de espacio.
+//Por ejemplo, si tuviesemos una soja de 0.6 metros y de semilla de 2009, la planta tendría una tolerancia al sol de 7 horas,
+// no daría semillas y ocuparía 0.3 metros cuadrados.

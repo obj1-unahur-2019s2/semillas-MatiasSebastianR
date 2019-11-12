@@ -37,7 +37,7 @@ class Soja inherits Plantas {
 	
 	override method horasDeSolTolera() { return
 		if (altura < 0.5) { 6 }
-		else if (altura >= 0.5 and altura <= 1) { 7 }
+		else if ( altura.between(0.5, 1)) { 7 }
 		else { 9 } 
 	}
 	override method daSemillas() {
